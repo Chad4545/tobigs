@@ -29,21 +29,26 @@ class mypca(object):
             print('Input is nothing!')
             return
         if self.k is None:
-            self.k = min(X_train.shape[0],X_train.shape[1])
+            self.k = X_train.shape[1]
             
         #############################################
         # TO DO                                     #
-        # 인풋 데이터의 공분산행렬을 이용해         #
-        # components와 explain_values 완성          # 
+        # 인풋 데이터의 공분산행렬을 이용해                 #
+        # components와 explain_values 완성           # 
         #############################################
+        cov_mat = np.cov(X_train.T)
+        eigen_values = lin.eig(cov_mat)[0]
+        eigen_vectors = lin.eig(cov_mat)[1].T
         
+        self.explain_values  = eigen_values[:self.k]  # k,
+        self.components = eigen_vectors[:self.k,:]    # k,n
         
         
         #############################################
         # END CODE                                  #
         #############################################
         
-        return
+        return self.explain_values, self.components
     
     def transform(self,X=None):
         if X is None:
@@ -57,11 +62,11 @@ class mypca(object):
         '''
         #############################################
         # TO DO                                     #
-        # components를 이용해 변환결과인            #
+        # components를 이용해 변환결과인                 #
         # result 계산                               #
         #############################################
-        
-        
+        result = self.components.dot(X.T).T
+     
         
         #############################################
         # END CODE                                  #
