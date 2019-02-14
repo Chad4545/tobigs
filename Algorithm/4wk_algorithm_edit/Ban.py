@@ -1,9 +1,3 @@
-
-# coding: utf-8
-
-# In[ ]:
-
-
 class Ban:
     def __init__(self, no=None):
         self.no = no
@@ -13,10 +7,10 @@ class Ban:
         pass
     
     def __lt__(self, other):
-        pass
+        return len(self) < len(other)
     
     def __eq__(self, other):
-        pass
+        return len(self) == len(other)
     
     def count_student(self):
         """해당 반에 속해있는 학생들의 수 return"""

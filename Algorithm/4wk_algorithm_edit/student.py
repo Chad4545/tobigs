@@ -1,9 +1,3 @@
-
-# coding: utf-8
-
-# In[ ]:
-
-
 class Student:
     def __init__(self, id=None, name=None):
         self.id = id
@@ -12,6 +6,6 @@ class Student:
     def __str__(self):
         pass
     
-    def __lt__(self):
-        pass
+    def __lt__(self, other):
+        return len(self) < len(other)
 
