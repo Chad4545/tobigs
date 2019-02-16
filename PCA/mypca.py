@@ -29,6 +29,7 @@ class mypca(object):
             print('Input is nothing!')
             return
         if self.k is None:
+      
             self.k = X_train.shape[1]
             
         #############################################
