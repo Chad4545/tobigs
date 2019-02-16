@@ -1,11 +1,11 @@
 class Student:
-    def __init__(self, id=None, name=None):
-        self.id = id
+    def __init__(self, num=None, name=None):
+        self.num = num
         self.name = name
         
     def __str__(self):
-        pass
+        return "{}번  {}".format(self.num, self.name)
     
     def __lt__(self, other):
-        return len(self) < len(other)
+        return self.num < other.num
 
