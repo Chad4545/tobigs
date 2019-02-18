@@ -1,6 +1,6 @@
-# If you are the member of Tobigs, do not Sneaking and code yourself!!!
+# If you are the member of Tobigs, do not Sneaking and 
 
-
+<img src="doityourself.png" width=500 >
 
 # tobigs
 
